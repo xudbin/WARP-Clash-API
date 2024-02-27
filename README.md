@@ -105,10 +105,14 @@ curl -X POST http://host:port/api/account/reset_key
 
 ### 设置自己的`LicenseKey`
 
-若您已经拥有了`WARP+`的`LicenseKey`，可以通过以下接口来设置：
+若您已经拥有了`WARP+`的`LicenseKey`，没有设置SECRET_KEY的 可以通过以下接口来设置：
 
 ```bash
 curl -X POST http://host:port/api/account/update_license -H "Content-Type: application/json" -d "{\"license_key\": \"your_license_key\"}"
+```
+设置了SECRET_KEY的 可以通过以下接口来设置：
+```bash
+curl -X POST http://host:port/api/account/update_license?key=XXXXXX -H "Content-Type: application/json" -d "{\"license_key\": \"your_license_key\"}"
 ```
 
 请注意，当您设置了`LicenseKey`后，其`PublicKey`和`PrivateKey`将会被重置，需要重新获取订阅内容。
