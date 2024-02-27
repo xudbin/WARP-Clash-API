@@ -110,7 +110,7 @@ curl -X POST http://host:port/api/account/reset_key
 ```bash
 curl -X POST http://host:port/api/account/update_license -H "Content-Type: application/json" -d "{\"license_key\": \"your_license_key\"}"
 ```
-设置了SECRET_KEY的 可以通过以下接口来设置：
+设置了SECRET_KEY的 可以通过以下接口来设置，注意修改 key=XXXXXX  为你自己的 ：
 ```bash
 curl -X POST http://host:port/api/account/update_license?key=XXXXXX -H "Content-Type: application/json" -d "{\"license_key\": \"your_license_key\"}"
 ```
